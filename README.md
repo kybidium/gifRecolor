@@ -23,14 +23,17 @@ K-means clustering is used to find the most representative colors in the gif, th
 
 ### Step 1: K-Means Clustering (Color Reduction)
 Reduced to 6 colors.
+
 ![K-Means GIF](assets/kmeans.gif)
 
 ### Palette Analysis
 The 6 centroids found by K-Means.
+
 ![Palette](assets/palette.png)
 
 ### Step 2: Color Replacement
 Replaced colors based on `replacements.json`.
+
 ![Recolored GIF](assets/recolored.gif)
 
 ## Color replacement
