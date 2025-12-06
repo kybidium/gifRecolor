@@ -14,7 +14,7 @@ python3 recolor.py <input_gif> <output_gif> <replacements_file>
 ```
 
 ## Preprocessing
-K-means clustering is used to find the most representative colors in the gif, then the colors in the gif are replaced with the closest colors found by k-means.
+K-means clustering is used to find the most representative colors in the gif, then the colors in the gif are replaced with the closest colors found by k-means. This way, we can reduce the number of colors in the gif and make it easier to recolor.
 
 ## Results
 
