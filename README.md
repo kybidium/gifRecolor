@@ -16,5 +16,22 @@ python3 recolor.py <input_gif> <output_gif> <replacements_file>
 ## Preprocessing
 K-means clustering is used to find the most representative colors in the gif, then the colors in the gif are replaced with the closest colors found by k-means.
 
+## Results
+
+### Original
+![Original GIF](assets/original.gif)
+
+### Step 1: K-Means Clustering (Color Reduction)
+Reduced to 6 colors.
+![K-Means GIF](assets/kmeans.gif)
+
+### Palette Analysis
+The 6 centroids found by K-Means.
+![Palette](assets/palette.png)
+
+### Step 2: Color Replacement
+Replaced colors based on `replacements.json`.
+![Recolored GIF](assets/recolored.gif)
+
 ## Color replacement
 With the colors found by k-means, the new colors in the gif are replaced with colors as specified in the replacements.json file.
