@@ -84,11 +84,24 @@ def process_gif(input_path, output_path, n_clusters=6):
     )
     print("Done!")
 
+import sys
+
 if __name__ == "__main__":
-    input_gif = "data/mochicat.gif"
-    output_gif = "outputs/mochicat_kmeans.gif"
-    
+    if len(sys.argv) < 3:
+        print("Usage: python3 kmeans.py <input_gif> <output_gif> [n_clusters]")
+        # Fallback to default for convenience if running without args during dev, 
+        # but user specifically asked for this structure so maybe I should just print usage.
+        # I'll keep the default behavior if no args are passed but print usage info.
+        print("Running with default values...")
+        input_gif = "data/mochicat.gif"
+        output_gif = "outputs/mochicat_kmeans.gif"
+        n_clusters = 6
+    else:
+        input_gif = sys.argv[1]
+        output_gif = sys.argv[2]
+        n_clusters = int(sys.argv[3]) if len(sys.argv) > 3 else 6
+
     if os.path.exists(input_gif):
-        process_gif(input_gif, output_gif)
+        process_gif(input_gif, output_gif, n_clusters)
     else:
         print(f"File not found: {input_gif}")

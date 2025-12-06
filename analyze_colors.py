@@ -1,6 +1,6 @@
 import numpy as np
 from PIL import Image
-
+""" FOR DEBUGGING GIF COLORS """
 def analyze_gif_colors(gif_path):
     print(f"Analyzing colors in {gif_path}...")
     try:
@@ -31,7 +31,9 @@ def analyze_gif_colors(gif_path):
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        analyze_gif_colors(sys.argv[1])
-    else:
+    if len(sys.argv) < 2:
+        print("Usage: python3 analyze_colors.py <input_gif>")
+        print("Running with default: outputs/mochicat_kmeans.gif")
         analyze_gif_colors("outputs/mochicat_kmeans.gif")
+    else:
+        analyze_gif_colors(sys.argv[1])
